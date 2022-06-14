@@ -40,26 +40,27 @@ namespace TesteXPE3200Forms
             this.label2 = new System.Windows.Forms.Label();
             this.txbLogin = new System.Windows.Forms.TextBox();
             this.gbLote = new System.Windows.Forms.GroupBox();
-            this.cbEmLote = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nmDelayEnvio = new System.Windows.Forms.NumericUpDown();
-            this.nmNumeroItensEnvio = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.nmUsuariosPorLote = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbEmLote = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txbImagem = new System.Windows.Forms.TextBox();
+            this.nmNumeroItensEnvio = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pbEnvio = new System.Windows.Forms.ProgressBar();
             this.gbDispositivo.SuspendLayout();
             this.gbLote.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDelayEnvio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmNumeroItensEnvio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmUsuariosPorLote)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmNumeroItensEnvio)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(675, 423);
+            this.btnEnviar.Location = new System.Drawing.Point(676, 460);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(113, 39);
             this.btnEnviar.TabIndex = 0;
@@ -69,7 +70,7 @@ namespace TesteXPE3200Forms
             // 
             // txbEndereco
             // 
-            this.txbEndereco.Location = new System.Drawing.Point(92, 22);
+            this.txbEndereco.Location = new System.Drawing.Point(93, 57);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(696, 27);
             this.txbEndereco.TabIndex = 1;
@@ -77,7 +78,7 @@ namespace TesteXPE3200Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(13, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 2;
@@ -87,7 +88,7 @@ namespace TesteXPE3200Forms
             // 
             this.rbSincrono.AutoSize = true;
             this.rbSincrono.Checked = true;
-            this.rbSincrono.Location = new System.Drawing.Point(9, 430);
+            this.rbSincrono.Location = new System.Drawing.Point(13, 467);
             this.rbSincrono.Name = "rbSincrono";
             this.rbSincrono.Size = new System.Drawing.Size(88, 24);
             this.rbSincrono.TabIndex = 3;
@@ -98,7 +99,7 @@ namespace TesteXPE3200Forms
             // rbAssincrono
             // 
             this.rbAssincrono.AutoSize = true;
-            this.rbAssincrono.Location = new System.Drawing.Point(103, 430);
+            this.rbAssincrono.Location = new System.Drawing.Point(107, 467);
             this.rbAssincrono.Name = "rbAssincrono";
             this.rbAssincrono.Size = new System.Drawing.Size(102, 24);
             this.rbAssincrono.TabIndex = 4;
@@ -111,7 +112,7 @@ namespace TesteXPE3200Forms
             this.gbDispositivo.Controls.Add(this.txbSenha);
             this.gbDispositivo.Controls.Add(this.label2);
             this.gbDispositivo.Controls.Add(this.txbLogin);
-            this.gbDispositivo.Location = new System.Drawing.Point(12, 64);
+            this.gbDispositivo.Location = new System.Drawing.Point(13, 94);
             this.gbDispositivo.Name = "gbDispositivo";
             this.gbDispositivo.Size = new System.Drawing.Size(776, 110);
             this.gbDispositivo.TabIndex = 7;
@@ -155,108 +156,12 @@ namespace TesteXPE3200Forms
             this.gbLote.Controls.Add(this.nmUsuariosPorLote);
             this.gbLote.Controls.Add(this.label4);
             this.gbLote.Controls.Add(this.cbEmLote);
-            this.gbLote.Location = new System.Drawing.Point(12, 304);
+            this.gbLote.Location = new System.Drawing.Point(13, 341);
             this.gbLote.Name = "gbLote";
             this.gbLote.Size = new System.Drawing.Size(776, 113);
             this.gbLote.TabIndex = 11;
             this.gbLote.TabStop = false;
             this.gbLote.Text = "Lote";
-            // 
-            // cbEmLote
-            // 
-            this.cbEmLote.AutoSize = true;
-            this.cbEmLote.Location = new System.Drawing.Point(10, 26);
-            this.cbEmLote.Name = "cbEmLote";
-            this.cbEmLote.Size = new System.Drawing.Size(184, 24);
-            this.cbEmLote.TabIndex = 11;
-            this.cbEmLote.Text = "Habilitar envio em lote";
-            this.cbEmLote.UseVisualStyleBackColor = true;
-            this.cbEmLote.CheckedChanged += new System.EventHandler(this.cbEmLote_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.nmDelayEnvio);
-            this.groupBox1.Controls.Add(this.nmNumeroItensEnvio);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(12, 180);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 118);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Usuários";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(623, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "segundos";
-            // 
-            // nmDelayEnvio
-            // 
-            this.nmDelayEnvio.Location = new System.Drawing.Point(467, 28);
-            this.nmDelayEnvio.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nmDelayEnvio.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmDelayEnvio.Name = "nmDelayEnvio";
-            this.nmDelayEnvio.Size = new System.Drawing.Size(150, 27);
-            this.nmDelayEnvio.TabIndex = 24;
-            this.nmDelayEnvio.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // nmNumeroItensEnvio
-            // 
-            this.nmNumeroItensEnvio.Location = new System.Drawing.Point(167, 26);
-            this.nmNumeroItensEnvio.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.nmNumeroItensEnvio.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmNumeroItensEnvio.Name = "nmNumeroItensEnvio";
-            this.nmNumeroItensEnvio.Size = new System.Drawing.Size(150, 27);
-            this.nmNumeroItensEnvio.TabIndex = 23;
-            this.nmNumeroItensEnvio.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(371, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Delay envio:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 20);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Número de usuários";
             // 
             // nmUsuariosPorLote
             // 
@@ -290,11 +195,107 @@ namespace TesteXPE3200Forms
             this.label4.TabIndex = 24;
             this.label4.Text = "Usuários por lote";
             // 
+            // cbEmLote
+            // 
+            this.cbEmLote.AutoSize = true;
+            this.cbEmLote.Location = new System.Drawing.Point(10, 26);
+            this.cbEmLote.Name = "cbEmLote";
+            this.cbEmLote.Size = new System.Drawing.Size(184, 24);
+            this.cbEmLote.TabIndex = 11;
+            this.cbEmLote.Text = "Habilitar envio em lote";
+            this.cbEmLote.UseVisualStyleBackColor = true;
+            this.cbEmLote.CheckedChanged += new System.EventHandler(this.cbEmLote_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txbImagem);
+            this.groupBox1.Controls.Add(this.nmNumeroItensEnvio);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Location = new System.Drawing.Point(13, 210);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(776, 125);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Usuários";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(88, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Imagem:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(729, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 29);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txbImagem
+            // 
+            this.txbImagem.Location = new System.Drawing.Point(161, 75);
+            this.txbImagem.Name = "txbImagem";
+            this.txbImagem.ReadOnly = true;
+            this.txbImagem.Size = new System.Drawing.Size(562, 27);
+            this.txbImagem.TabIndex = 24;
+            // 
+            // nmNumeroItensEnvio
+            // 
+            this.nmNumeroItensEnvio.Location = new System.Drawing.Point(161, 26);
+            this.nmNumeroItensEnvio.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nmNumeroItensEnvio.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmNumeroItensEnvio.Name = "nmNumeroItensEnvio";
+            this.nmNumeroItensEnvio.Size = new System.Drawing.Size(150, 27);
+            this.nmNumeroItensEnvio.TabIndex = 23;
+            this.nmNumeroItensEnvio.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Número de usuários:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pbEnvio
+            // 
+            this.pbEnvio.Location = new System.Drawing.Point(13, 13);
+            this.pbEnvio.Maximum = 10;
+            this.pbEnvio.Name = "pbEnvio";
+            this.pbEnvio.Size = new System.Drawing.Size(775, 29);
+            this.pbEnvio.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 483);
+            this.ClientSize = new System.Drawing.Size(812, 514);
+            this.Controls.Add(this.pbEnvio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbLote);
             this.Controls.Add(this.gbDispositivo);
@@ -304,9 +305,9 @@ namespace TesteXPE3200Forms
             this.Controls.Add(this.txbEndereco);
             this.Controls.Add(this.btnEnviar);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(818, 530);
+            this.MaximumSize = new System.Drawing.Size(830, 561);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(818, 530);
+            this.MinimumSize = new System.Drawing.Size(830, 561);
             this.Name = "Form1";
             this.Text = "XPE 3200";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -314,11 +315,10 @@ namespace TesteXPE3200Forms
             this.gbDispositivo.PerformLayout();
             this.gbLote.ResumeLayout(false);
             this.gbLote.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmUsuariosPorLote)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmDelayEnvio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmNumeroItensEnvio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmUsuariosPorLote)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,13 +339,15 @@ namespace TesteXPE3200Forms
         private System.Windows.Forms.GroupBox gbLote;
         private System.Windows.Forms.CheckBox cbEmLote;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown nmDelayEnvio;
         private System.Windows.Forms.NumericUpDown nmNumeroItensEnvio;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nmUsuariosPorLote;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txbImagem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ProgressBar pbEnvio;
     }
 }
 
