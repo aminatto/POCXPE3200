@@ -1171,19 +1171,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amanda.minato\\.nuget\\packages\\": {}
+    "C:\\Users\\Renato Henrique\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amanda.minato\\Downloads\\TesteXPE3200\\TesteXPE3200\\TesteXPE3200\\TesteXPE3200.csproj",
+      "projectUniqueName": "C:\\Repositorios\\POCXPE3200\\TesteXPE3200\\TesteXPE3200.csproj",
       "projectName": "TesteXPE3200",
-      "projectPath": "C:\\Users\\Amanda.minato\\Downloads\\TesteXPE3200\\TesteXPE3200\\TesteXPE3200\\TesteXPE3200.csproj",
-      "packagesPath": "C:\\Users\\Amanda.minato\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amanda.minato\\Downloads\\TesteXPE3200\\TesteXPE3200\\TesteXPE3200\\obj\\",
+      "projectPath": "C:\\Repositorios\\POCXPE3200\\TesteXPE3200\\TesteXPE3200.csproj",
+      "packagesPath": "C:\\Users\\Renato Henrique\\.nuget\\packages\\",
+      "outputPath": "C:\\Repositorios\\POCXPE3200\\TesteXPE3200\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Amanda.minato\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Renato Henrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1245,7 +1250,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

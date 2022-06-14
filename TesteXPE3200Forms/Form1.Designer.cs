@@ -42,16 +42,19 @@ namespace TesteXPE3200Forms
             this.gbLote = new System.Windows.Forms.GroupBox();
             this.cbEmLote = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.nmDelayEnvio = new System.Windows.Forms.NumericUpDown();
             this.nmNumeroItensEnvio = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.nmUsuariosPorLote = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.gbDispositivo.SuspendLayout();
             this.gbLote.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDelayEnvio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmNumeroItensEnvio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmUsuariosPorLote)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnviar
@@ -149,6 +152,8 @@ namespace TesteXPE3200Forms
             // 
             // gbLote
             // 
+            this.gbLote.Controls.Add(this.nmUsuariosPorLote);
+            this.gbLote.Controls.Add(this.label4);
             this.gbLote.Controls.Add(this.cbEmLote);
             this.gbLote.Location = new System.Drawing.Point(12, 304);
             this.gbLote.Name = "gbLote";
@@ -160,12 +165,13 @@ namespace TesteXPE3200Forms
             // cbEmLote
             // 
             this.cbEmLote.AutoSize = true;
-            this.cbEmLote.Location = new System.Drawing.Point(10, 36);
+            this.cbEmLote.Location = new System.Drawing.Point(10, 26);
             this.cbEmLote.Name = "cbEmLote";
             this.cbEmLote.Size = new System.Drawing.Size(184, 24);
             this.cbEmLote.TabIndex = 11;
             this.cbEmLote.Text = "Habilitar envio em lote";
             this.cbEmLote.UseVisualStyleBackColor = true;
+            this.cbEmLote.CheckedChanged += new System.EventHandler(this.cbEmLote_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -180,6 +186,15 @@ namespace TesteXPE3200Forms
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuários";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(623, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 20);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "segundos";
             // 
             // nmDelayEnvio
             // 
@@ -243,14 +258,37 @@ namespace TesteXPE3200Forms
             this.label5.TabIndex = 21;
             this.label5.Text = "Número de usuários";
             // 
-            // label7
+            // nmUsuariosPorLote
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(623, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 20);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "segundos";
+            this.nmUsuariosPorLote.Location = new System.Drawing.Point(138, 65);
+            this.nmUsuariosPorLote.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nmUsuariosPorLote.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmUsuariosPorLote.Name = "nmUsuariosPorLote";
+            this.nmUsuariosPorLote.ReadOnly = true;
+            this.nmUsuariosPorLote.Size = new System.Drawing.Size(150, 27);
+            this.nmUsuariosPorLote.TabIndex = 25;
+            this.nmUsuariosPorLote.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Usuários por lote";
             // 
             // Form1
             // 
@@ -280,6 +318,7 @@ namespace TesteXPE3200Forms
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDelayEnvio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmNumeroItensEnvio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmUsuariosPorLote)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,6 +344,8 @@ namespace TesteXPE3200Forms
         private System.Windows.Forms.NumericUpDown nmNumeroItensEnvio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nmUsuariosPorLote;
+        private System.Windows.Forms.Label label4;
     }
 }
 

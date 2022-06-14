@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TesteXPE3200
@@ -50,14 +51,30 @@ namespace TesteXPE3200
         {
             try
             {
+                Semaphore semaphoreObject = new Semaphore(initialCount: 1, maximumCount: 1);
+
                 var users = CreateUsers(numberOfUsers);
+
+                var executions = new List<Task>();
 
                 foreach (var items in users.Data.Items)
                 {
-                    await AddUserAsync(users.Target, users.Action, items);
-
-                    await Task.Delay(1000);
+                    executions.Add(Task.Run(() =>
+                    {
+                        semaphoreObject.WaitOne();
+                        AddUser(users.Target, users.Action, items);
+                        semaphoreObject.Release();
+                    }));
                 }
+
+                await Task.WhenAll(executions);
+
+                //foreach (var items in users.Data.Items)
+                //{
+                //    await AddUserAsync(users.Target, users.Action, items);
+
+                //    await Task.Delay(2000);
+                //}
             }
             catch (Exception e)
             {
@@ -127,7 +144,7 @@ namespace TesteXPE3200
             responseTask.EnsureSuccessStatusCode();
         }
 
-        public async void AddUsers(int numberOfUsers)
+        public void AddUsers(int numberOfUsers)
         {
             try
             {

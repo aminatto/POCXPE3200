@@ -52,5 +52,11 @@ namespace TesteXPE3200Forms
             }
             Console.ReadLine();
         }
+
+        private void cbEmLote_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBox = (CheckBox)sender;
+            nmUsuariosPorLote.ReadOnly = !checkBox.Checked;    
+        }
     }
 }

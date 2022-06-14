@@ -10,15 +10,3 @@ C:\Repositorios\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.csproj.C
 C:\Repositorios\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.dll
 C:\Repositorios\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\ref\TesteXPE3200.dll
 C:\Repositorios\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.pdb
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\bin\Debug\net5.0\TesteXPE3200.deps.json
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\bin\Debug\net5.0\TesteXPE3200.dll
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\bin\Debug\net5.0\ref\TesteXPE3200.dll
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\bin\Debug\net5.0\TesteXPE3200.pdb
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.csproj.AssemblyReference.cache
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.AssemblyInfoInputs.cache
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.AssemblyInfo.cs
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.csproj.CoreCompileInputs.cache
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.dll
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\ref\TesteXPE3200.dll
-C:\Users\Amanda.minato\Downloads\TesteXPE3200\TesteXPE3200\TesteXPE3200\obj\Debug\net5.0\TesteXPE3200.pdb
