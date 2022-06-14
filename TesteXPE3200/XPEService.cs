@@ -49,65 +49,68 @@ namespace TesteXPE3200
 
         public async Task AddUsersOneAtTimeAsync(int numberOfUsers)
         {
-            try
+            using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(1))
             {
-                Semaphore semaphoreObject = new Semaphore(initialCount: 1, maximumCount: 1);
-
                 var users = CreateUsers(numberOfUsers);
 
-                var executions = new List<Task>();
+                var tasks = new List<Task>();
 
-                foreach (var items in users.Data.Items)
+                foreach (var item in users.Data.Items)
                 {
-                    executions.Add(Task.Run(() =>
+                    concurrencySemaphore.Wait();
+                    var task = Task.Run(async () =>
                     {
-                        semaphoreObject.WaitOne();
-                        AddUser(users.Target, users.Action, items);
-                        semaphoreObject.Release();
-                    }));
+                        try
+                        {
+                            return await AddUserAsync(users.Target, users.Action, item);
+                        }
+                        finally
+                        {
+                            concurrencySemaphore.Release();
+                        }
+                    });
+                    tasks.Add(task);
                 }
 
-                await Task.WhenAll(executions);
-
-                //foreach (var items in users.Data.Items)
-                //{
-                //    await AddUserAsync(users.Target, users.Action, items);
-
-                //    await Task.Delay(2000);
-                //}
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
+                await Task.WhenAll(tasks.ToArray());
             }
         }
 
-        private async Task AddUserAsync(string target, string action, UserItem userItem)
+        private async Task<bool> AddUserAsync(string target, string action, UserItem userItem)
         {
-            var sendUser = new User(target, action, new List<UserItem> { userItem });
-
-            HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(sendUser), Encoding.UTF8);
-
-            var requestUri = new Uri($"{endereco}/api/user/add");
-
-            var credCache = new CredentialCache
+            try
             {
+                var sendUser = new User(target, action, new List<UserItem> { userItem });
+
+                HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(sendUser), Encoding.UTF8);
+
+                var requestUri = new Uri($"{endereco}/api/user/add");
+
+                var credCache = new CredentialCache
                 {
-                    new Uri($"{endereco}"),
-                    "Digest",
-                    new NetworkCredential(login, senha)
-                }
-            };
+                    {
+                        new Uri($"{endereco}"),
+                        "Digest",
+                        new NetworkCredential(login, senha)
+                    }
+                };
 
-            using var clientHander = new HttpClientHandler
+                using var clientHander = new HttpClientHandler
+                {
+                    Credentials = credCache,
+                    PreAuthenticate = true
+                };
+
+                using var httpClient = new HttpClient(clientHander);
+                var responseTask = await httpClient.PostAsync(requestUri, httpContent);
+                responseTask.EnsureSuccessStatusCode();
+
+                return true;
+            }
+            catch (Exception)
             {
-                Credentials = credCache,
-                PreAuthenticate = true
-            };
-
-            using var httpClient = new HttpClient(clientHander);
-            var responseTask = await httpClient.PostAsync(requestUri, httpContent);
-            responseTask.EnsureSuccessStatusCode();
+                return false;
+            }
         }
 
         private void AddUser(string target, string action, UserItem userItem)
